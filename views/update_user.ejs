@@ -1,5 +1,5 @@
 <!-- include header -->
-<%- include("include/header") %>
+<%- include('include/_header') %>
 <!-- /include header -->
 
 <!-- Main Site -->
@@ -17,16 +17,15 @@
 
     <!-- add user form -->
     <!-- form handling -->
-
     <form method="POST" id="update_user">
       <div class="new_user">
         <div class="form-group">
           <label for="name" class="text-light">Name</label>
-          <input type="hidden" name="id" value="" />
+          <input type="hidden" name="id" value="<%= user._id %>" />
           <input
             type="text"
             name="name"
-            value=""
+            value="<%= user.name %>"
             placeholder="Maria Karavazaki"
           />
         </div>
@@ -35,18 +34,20 @@
           <input
             type="text"
             name="email"
-            value=""
+            value="<%= user.email%>"
             placeholder="example@gmail.com"
           />
         </div>
         <div class="form-group">
           <label for="gender" class="text-light">Gender</label>
           <div class="radio inline">
-            <input type="radio" id="radio-2" name="gender" value="Male" />
+            <input type="radio" id="radio-2" name="gender" value="Male" <%=
+            user.gender == 'Male' ? 'checked' : '' %>>
             <label for="radio-2" class="radio-label">Male</label>
           </div>
           <div class="radio inline">
-            <input type="radio" id="radio-3" name="gender" value="Female" />
+            <input type="radio" id="radio-3" name="gender" value="Female" <%=
+            user.gender == 'Female' ? 'checked' : '' %> >
             <label for="radio-3" class="radio-label">Female</label>
           </div>
         </div>
@@ -54,11 +55,13 @@
         <div class="form-group">
           <label for="gender" class="text-light">Status</label>
           <div class="radio inline">
-            <input type="radio" id="radio-4" name="status" value="Active" />
+            <input type="radio" id="radio-4" name="status" value="Active" <%=
+            user.status == 'Active' ? 'checked' : '' %> >
             <label for="radio-4" class="radio-label">Active</label>
           </div>
           <div class="radio inline">
-            <input type="radio" id="radio-5" name="status" value="Inactive" />
+            <input type="radio" id="radio-5" name="status" value="Inactive" <%=
+            user.status == 'Inactive' ? 'checked' : '' %> >
             <label for="radio-5" class="radio-label">Inactive</label>
           </div>
         </div>
@@ -73,5 +76,5 @@
 <!-- /Main Site -->
 
 <!-- include footer -->
-<%- include("include/footer") %>
+<%- include('include/_footer') %>
 <!-- /include footer -->
