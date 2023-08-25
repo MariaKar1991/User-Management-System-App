@@ -1,19 +1,23 @@
-<!-- include header -->
+<!-- Include the header section -->
 <%- include("include/_header") %>
-<!-- /include header -->
+<!-- /Include the header section -->
 
 <!-- Main Site -->
 <main id="site-main">
   <div class="container">
+    <!-- Box navigation for adding a new user -->
     <div class="box-nav d-flex justify-between">
       <a href="/add-user" class="border-shadow">
+        <!-- Link/button to navigate to the "Add User" page -->
         <span class="text-gradient">New User<i class="fas fa-user"></i></span>
       </a>
     </div>
 
-    <!-- form handling -->
+    <!-- Form for displaying and handling user data -->
     <form action="/" method="POST">
+      <!-- Table for displaying user data -->
       <table class="table">
+        <!-- Table header -->
         <thead class="thead-dark">
           <tr>
             <th>ID</th>
@@ -25,6 +29,7 @@
           </tr>
         </thead>
         <tbody>
+          <!-- Include the show template for populating user data -->
           <%- include("include/_show") %>
         </tbody>
       </table>
@@ -33,6 +38,7 @@
 </main>
 <!-- /Main Site -->
 
-<!-- include footer -->
+<!-- Include the footer section -->
 <%- include("include/_footer") %>
-<!-- /include footer -->
+<!-- /Include the footer section -->
+
