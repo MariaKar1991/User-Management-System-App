@@ -1,12 +1,16 @@
-<!-- form handling -->
-
+<!-- Form for adding a new user -->
 <form action="/api/users" method="POST" id="add_user">
   <div class="new_user">
+    <!-- User ID (hidden field) -->
+    <input type="hidden" name="id" value="" />
+
+    <!-- Name input field -->
     <div class="form-group">
       <label for="name" class="text-light">Name</label>
-      <input type="hidden" name="id" value="" />
       <input type="text" name="name" value="" placeholder="Maria Karavazaki" />
     </div>
+
+    <!-- Email input field -->
     <div class="form-group">
       <label for="Email" class="text-light">Email</label>
       <input
@@ -16,6 +20,8 @@
         placeholder="example@gmail.com"
       />
     </div>
+
+    <!-- Gender radio buttons -->
     <div class="form-group">
       <label for="gender" class="text-light">Gender</label>
       <div class="radio inline">
@@ -28,6 +34,7 @@
       </div>
     </div>
 
+    <!-- Status radio buttons -->
     <div class="form-group">
       <label for="gender" class="text-light">Status</label>
       <div class="radio inline">
@@ -40,6 +47,7 @@
       </div>
     </div>
 
+    <!-- Submit button -->
     <div class="form-group">
       <button type="submit" class="btn text-dark update">Save</button>
     </div>
