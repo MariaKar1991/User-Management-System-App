@@ -1,27 +1,32 @@
-<!-- include header -->
+<!-- Include the header section -->
 <%- include('include/_header') %>
-<!-- /include header -->
+<!-- /Include the header section -->
 
 <!-- Main Site -->
 <main id="site-main">
   <div class="container">
+    <!-- Box navigation for navigating back to the list of all users -->
     <div class="box-nav d-flex justify-between">
       <div class="filter">
+        <!-- Link/button to navigate back to the list of all users -->
         <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
       </div>
     </div>
+    <!-- Title and description for updating a user -->
     <div class="form-title text-center">
       <h2 class="text-dark">Update User</h2>
       <span class="text-light">Use the below form to Update an account</span>
     </div>
 
-    <!-- add user form -->
-    <!-- form handling -->
+    <!-- Form for updating user information -->
     <form method="POST" id="update_user">
       <div class="new_user">
+        <!-- Input field for user's name -->
         <div class="form-group">
           <label for="name" class="text-light">Name</label>
+          <!-- Hidden input field to store the user's ID -->
           <input type="hidden" name="id" value="<%= user._id %>" />
+          <!-- Text input field for user's name, pre-filled with the existing value -->
           <input
             type="text"
             name="name"
@@ -29,8 +34,10 @@
             placeholder="Maria Karavazaki"
           />
         </div>
+        <!-- Input field for user's email -->
         <div class="form-group">
           <label for="Email" class="text-light">Email</label>
+          <!-- Text input field for user's email, pre-filled with the existing value -->
           <input
             type="text"
             name="email"
@@ -38,34 +45,35 @@
             placeholder="example@gmail.com"
           />
         </div>
+        <!-- Input field for user's gender -->
         <div class="form-group">
           <label for="gender" class="text-light">Gender</label>
+          <!-- Radio buttons for selecting gender, with pre-selected option based on the existing value -->
           <div class="radio inline">
-            <input type="radio" id="radio-2" name="gender" value="Male" <%=
-            user.gender == 'Male' ? 'checked' : '' %>>
+            <input type="radio" id="radio-2" name="gender" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %>>
             <label for="radio-2" class="radio-label">Male</label>
           </div>
           <div class="radio inline">
-            <input type="radio" id="radio-3" name="gender" value="Female" <%=
-            user.gender == 'Female' ? 'checked' : '' %> >
+            <input type="radio" id="radio-3" name="gender" value="Female" <%= user.gender == 'Female' ? 'checked' : '' %> >
             <label for="radio-3" class="radio-label">Female</label>
           </div>
         </div>
 
+        <!-- Input field for user's status -->
         <div class="form-group">
           <label for="gender" class="text-light">Status</label>
+          <!-- Radio buttons for selecting status, with pre-selected option based on the existing value -->
           <div class="radio inline">
-            <input type="radio" id="radio-4" name="status" value="Active" <%=
-            user.status == 'Active' ? 'checked' : '' %> >
+            <input type="radio" id="radio-4" name="status" value="Active" <%= user.status == 'Active' ? 'checked' : '' %> >
             <label for="radio-4" class="radio-label">Active</label>
           </div>
           <div class="radio inline">
-            <input type="radio" id="radio-5" name="status" value="Inactive" <%=
-            user.status == 'Inactive' ? 'checked' : '' %> >
+            <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.status == 'Inactive' ? 'checked' : '' %> >
             <label for="radio-5" class="radio-label">Inactive</label>
           </div>
         </div>
 
+        <!-- Button to submit updated user information -->
         <div class="form-group">
           <button type="submit" class="btn text-dark update">Save</button>
         </div>
@@ -75,6 +83,3 @@
 </main>
 <!-- /Main Site -->
 
-<!-- include footer -->
-<%- include('include/_footer') %>
-<!-- /include footer -->
