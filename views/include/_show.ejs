@@ -1,19 +1,34 @@
 <% for(var i = 0; i < users.length; i++){%>
 
+<!-- Table row for each user -->
 <tr>
+  <!-- Index of the user (incremented by 1) -->
   <td><%= i + 1 %></td>
+  
+  <!-- User's name -->
   <td><%= users[i].name %></td>
+  
+  <!-- User's email -->
   <td><%= users[i].email %></td>
+  
+  <!-- User's gender -->
   <td><%= users[i].gender %></td>
+  
+  <!-- User's status -->
   <td><%= users[i].status %></td>
+  
+  <!-- Actions: Edit and Delete buttons -->
   <td>
+    <!-- Edit button linking to the "update-user" route with user's ID -->
     <a
-      href="/update-user?id=<%= users[i]._id%>"
+      href="/update-user?id=<%= users[i]._id %>"
       class="btn border-shadow update"
     >
       <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
     </a>
-    <a class="btn border-shadow delete" data-id="<%= users[i]._id%>">
+    
+    <!-- Delete button with data attribute for user's ID -->
+    <a class="btn border-shadow delete" data-id="<%= users[i]._id %>">
       <span class="text-gradient"><i class="fas fa-times"></i></span>
     </a>
   </td>
