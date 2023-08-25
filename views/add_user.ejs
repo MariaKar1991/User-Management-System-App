@@ -1,26 +1,30 @@
-<!-- include header -->
+<!-- Include the header section -->
 <%- include("include/_header") %>
-<!-- /include header -->
+<!-- /Include the header section -->
 
 <!-- Main Site -->
 <main id="site-main">
   <div class="container">
+    <!-- Box navigation for returning to the list of all users -->
     <div class="box-nav d-flex justify-between">
       <div class="filter">
+        <!-- Link to go back to the list of all users -->
         <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
       </div>
     </div>
+
+    <!-- Title and description for the "Add User" page -->
     <div class="form-title text-center">
       <h2 class="text-dark">New User</h2>
       <span class="text-light">Use the below form to create a new account</span>
     </div>
 
-    <!-- add user form -->
+    <!-- Include the form for adding a new user -->
     <%- include("include/_form") %>
   </div>
 </main>
 <!-- /Main Site -->
 
-<!-- include footer -->
+<!-- Include the footer section -->
 <%- include("include/_footer") %>
-<!-- /include footer -->
+<!-- /Include the footer section -->
