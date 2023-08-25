@@ -1,112 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CRUD Application</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD Application</title>
+  
+  <!-- Link to Font Awesome for icon usage -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Link to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap"
+    rel="stylesheet"
+  />
 
-    <link rel="stylesheet" href="../assets/css/style.css" />
-  </head>
-  <body>
-    <!-- Header -->
-    <header id="header">
-      <nav>
-        <div class="container">
-          <div class="text-center">
-            <a href="/" class="nav-brand text-dark">User Management system</a>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- /Header -->
-
-    <!-- Main Site -->
-    <main id="site-main">
+  <!-- Link to your custom stylesheet -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <!-- Header section -->
+  <header id="header">
+    <nav>
       <div class="container">
-        <div class="box-nav d-flex justify-between">
-          <div class="filter">
-            <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
-          </div>
+        <div class="text-center">
+          <!-- Logo/link to homepage -->
+          <a href="/" class="nav-brand text-dark">User Management System</a>
         </div>
-        <div class="form-title text-center">
-          <h2 class="text-dark">New User</h2>
-          <span class="text-light"
-            >Use the below form to Create a new account</span
-          >
-        </div>
-
-        <!-- form handling -->
-        <form method="POST" id="update_user">
-          <div class="new_user">
-            <div class="form-group">
-              <label for="name" class="text-light">Name</label>
-              <input type="hidden" name="id" value="" />
-              <input
-                type="text"
-                name="name"
-                value=""
-                placeholder="Maria Karavazaki"
-              />
-            </div>
-            <div class="form-group">
-              <label for="Email" class="text-light">Email</label>
-              <input
-                type="text"
-                name="email"
-                value=""
-                placeholder="example@gmail.com"
-              />
-            </div>
-            <div class="form-group">
-              <label for="gender" class="text-light">Gender</label>
-              <div class="radio inline">
-                <input type="radio" id="radio-2" name="gender" value="Male" />
-                <label for="radio-2" class="radio-label">Male</label>
-              </div>
-              <div class="radio inline">
-                <input type="radio" id="radio-3" name="gender" value="Female" />
-                <label for="radio-3" class="radio-label">Female</label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <label for="gender" class="text-light">Status</label>
-              <div class="radio inline">
-                <input type="radio" id="radio-4" name="status" value="Active" />
-                <label for="radio-4" class="radio-label">Active</label>
-              </div>
-              <div class="radio inline">
-                <input
-                  type="radio"
-                  id="radio-5"
-                  name="status"
-                  value="Inactive"
-                />
-                <label for="radio-5" class="radio-label">Inactive</label>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <button type="submit" class="btn text-dark update">Save</button>
-            </div>
-          </div>
-        </form>
       </div>
-    </main>
-    <!-- /Main Site -->
-  </body>
+    </nav>
+  </header>
+  <!-- /Header section -->
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+      <!-- Box navigation for returning to the list of all users -->
+      <div class="box-nav d-flex justify-between">
+        <div class="filter">
+          <!-- Link to go back to the list of all users -->
+          <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+        </div>
+      </div>
+
+      <!-- Title and description for the "Add User" page -->
+      <div class="form-title text-center">
+        <h2 class="text-dark">New User</h2>
+        <span class="text-light">Use the below form to create a new account</span>
+      </div>
+
+      <!-- Form for adding a new user -->
+      <form method="POST" id="update_user">
+        <div class="new_user">
+          <!-- Hidden field for user ID -->
+          <input type="hidden" name="id" value="" />
+
+          <!-- Name input field -->
+          <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="text" name="name" value="" placeholder="Maria Karavazaki" />
+          </div>
+
+          <!-- Email input field -->
+          <div class="form-group">
+            <label for="Email" class="text-light">Email</label>
+            <input type="text" name="email" value="" placeholder="example@gmail.com" />
+          </div>
+
+          <!-- Gender radio buttons -->
+          <div class="form-group">
+            <label for="gender" class="text-light">Gender</label>
+            <div class="radio inline">
+              <input type="radio" id="radio-2" name="gender" value="Male" />
+              <label for="radio-2" class="radio-label">Male</label>
+            </div>
+            <div class="radio inline">
+              <input type="radio" id="radio-3" name="gender" value="Female" />
+              <label for="radio-3" class="radio-label">Female</label>
+            </div>
+          </div>
+
+          <!-- Status radio buttons -->
+          <div class="form-group">
+            <label for="gender" class="text-light">Status</label>
+            <div class="radio inline">
+              <input type="radio" id="radio-4" name="status" value="Active" />
+              <label for="radio-4" class="radio-label">Active</label>
+            </div>
+            <div class="radio inline">
+              <input type="radio" id="radio-5" name="status" value="Inactive" />
+              <label for="radio-5" class="radio-label">Inactive</label>
+            </div>
+          </div>
+
+          <!-- Submit button -->
+          <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+  <!-- /Main Site -->
+</body>
 </html>
+
