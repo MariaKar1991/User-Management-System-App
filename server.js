@@ -15,7 +15,7 @@ const app = express();
 dotenv.config({ path: "config.env" });
 
 // Set the port number for the server to listen on
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4002;
 
 // Log requests using the morgan middleware
 app.use(morgan("tiny"));
